@@ -10,47 +10,120 @@ describe("RockPaperScissors", function() {
   describe('winning and losing', function() {
 
     describe('rock', function() {
-      it('should beat scissors', function() {
+      it('should crush scissors', function() {
         player1.pick("rock");
         player2.pick("scissors");
         expect(game.winner()).toBe(player1);
       });
-
-      it('should lose to paper', function() {
+      it('should crush lizard', function() {
+        player1.pick("rock");
+        player2.pick("lizard");
+        expect(game.winner()).toBe(player1);
+      });
+      it('should be covered by paper', function() {
         player1.pick("rock");
         player2.pick("paper");
+        expect(game.winner()).toBe(player2);
+      });
+      it('should be vaporised by spock', function() {
+        player1.pick("rock");
+        player2.pick("spock");
         expect(game.winner()).toBe(player2);
       });
     });
 
     describe('scissors', function () {
-      it('should beat paper', function() {
+      it('should cut paper', function() {
         player1.pick("scissors");
         player2.pick("paper");
         expect(game.winner()).toBe(player1);
       });
-
-      it('should lose to rock', function() {
+      it('should decapitate lizard', function() {
+        player1.pick("scissors");
+        player2.pick("lizard");
+        expect(game.winner()).toBe(player1);
+      });
+      it('should be crushed by rock', function() {
         player1.pick("scissors");
         player2.pick("rock");
+        expect(game.winner()).toBe(player2);
+      });
+      it('should be smashed by spock', function() {
+        player1.pick("scissors");
+        player2.pick("spock");
         expect(game.winner()).toBe(player2);
       });
     });
 
     describe('paper', function () {
-      it('should beat rock', function() {
+      it('should cover rock', function() {
         player1.pick("paper");
         player2.pick("rock");
         expect(game.winner()).toBe(player1);
       });
-
-      it('should lose to scissors', function() {
+      it('should disprove spock', function() {
+        player1.pick("paper");
+        player2.pick("spock");
+        expect(game.winner()).toBe(player1);
+      });
+      it('should be cut by scissors', function() {
         player1.pick("paper");
         player2.pick("scissors");
         expect(game.winner()).toBe(player2);
       });
+      it('should be eaten by lizard', function() {
+        player1.pick("paper");
+        player2.pick("lizard");
+        expect(game.winner()).toBe(player2);
+      });
     });
-  });
+
+    describe('lizard', function() {
+      it('should eat paper', function() {
+        player1.pick("lizard");
+        player2.pick("paper");
+        expect(game.winner()).toBe(player1)
+      });
+      it('should poison spock', function() {
+        player1.pick("lizard");
+        player2.pick("spock");
+        expect(game.winner()).toBe(player1)
+      });
+      it('should be crushed by rock', function() {
+        player1.pick("lizard");
+        player2.pick("rock");
+        expect(game.winner()).toBe(player2)
+      });
+      it('should by decapitated by scissors', function() {
+        player1.pick("lizard");
+        player2.pick("scissors");
+        expect(game.winner()).toBe(player2)
+      });
+    });
+
+    describe('spock', function() {
+      it('should crush scissors', function() {
+        player1.pick("spock");
+        player2.pick("scissors");
+        expect(game.winner()).toBe(player1)
+      });
+      it('should vaporise rock', function() {
+        player1.pick("spock");
+        player2.pick("rock");
+        expect(game.winner()).toBe(player1)
+      });
+      it('should be poisoned by lizard', function() {
+        player1.pick("spock");
+        player2.pick("lizard");
+        expect(game.winner()).toBe(player2)
+      });
+      it('should be disproved by paper', function() {
+        player1.pick("spock");
+        player2.pick("paper");
+        expect(game.winner()).toBe(player2)
+      });
+    });
+});
 
   describe('drawing', function() {
     it('matching values should produe a tie', function() {
