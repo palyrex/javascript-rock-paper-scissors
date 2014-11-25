@@ -131,6 +131,20 @@ describe("RockPaperScissors", function() {
       player2.pick("paper");
       expect(game.winner()).toBe(null);
     });
+  }); 
+
+  describe('print out winner and loser names', function() {
+    it('should display winner name', function() {
+      player1.pick("rock");
+      player2.pick("spock");
+      expect(game.message()).toBe("Alan's spock vaporises Pavel's rock");
+    });
+
+    it('should display loser name', function() {
+      player1.pick("lizard");
+      player2.pick("paper");
+      expect(game.message()).toBe("Pavel's lizard eats Alan's paper")
+    });
   });
 
 });
