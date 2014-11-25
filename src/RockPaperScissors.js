@@ -1,3 +1,13 @@
+function Bot() {
+
+};
+
+Bot.prototype.pick = function() {
+  available_choices = ["rock", "paper", "scissors", "lizard", "spock"];
+  choice_index = Math.floor(Math.random()*5)
+  return available_choices[choice_index];
+};
+
 function Player(name) {
   this.name = name;
 };

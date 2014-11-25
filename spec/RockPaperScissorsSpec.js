@@ -137,7 +137,7 @@ describe("RockPaperScissors", function() {
     it('should display winner name', function() {
       player1.pick("rock");
       player2.pick("spock");
-      expect(game.message()).toBe("Alan's spock vaporises Pavel's rock");
+      expect(game.message()).toBe("Alan's spock vaporises Pavel's rock")
     });
 
     it('should display loser name', function() {
@@ -154,5 +154,13 @@ describe("RockPaperScissors", function() {
       expect(game.message()).toBe("That's a DRAW")
     });
   });
+
+  describe('the computer should pick a value', function() {
+    it('should make a random choice', function() {
+      bot = new Bot();
+      available_choices = ["rock", "paper", "scissors", "lizard", "spock"];
+      expect(available_choices).toContain(bot.pick());
+    });
+  });  
 
 });
