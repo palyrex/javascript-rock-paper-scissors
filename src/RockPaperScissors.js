@@ -30,6 +30,7 @@ Game.prototype.loser = function(){
 };
 
 Game.prototype.message = function() {
+if (this.winner() === null) return "That's a DRAW"
 verbs = {  "paper"    : ["covers","rock"        ],
            "rock"     : ["crushes", "lizard"    ],
            "lizard"   : ["poisons", "spock"     ], 

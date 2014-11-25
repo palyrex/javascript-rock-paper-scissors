@@ -147,4 +147,12 @@ describe("RockPaperScissors", function() {
     });
   });
 
+  describe('says draw if players choose same pick', function() {
+    it('should print "That\'s a DRAW"', function() {
+      player1.pick("paper");
+      player2.pick("paper");
+      expect(game.message()).toBe("That's a DRAW")
+    });
+  });
+
 });
