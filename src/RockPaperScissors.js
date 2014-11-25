@@ -16,4 +16,5 @@ var winningCombinations = {rock : "scissors", "scissors" : "paper", "paper" : "r
 Game.prototype.winner = function(){
   if (winningCombinations[this.player1.pick] == this.player2.pick) return this.player1
   if (winningCombinations[this.player2.pick] == this.player1.pick) return this.player2
+  if (this.player1.pick == this.player2.pick) return null
 };
