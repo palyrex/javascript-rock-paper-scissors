@@ -35,20 +35,33 @@
     </style>
   </head>
   <body>
-    <h1>Rock Paper Scissors Lizard Spock</h1>
-    <div class='choices'>
+    <header>
+      <h1>Rock Paper Scissors Lizard Spock</h1>
+    </header>
+    <section class='choices'>
       <img src="images/rock.png">
       <img src="images/paper.png">
       <img src="images/scissors.png">
       <img src="images/lizard.png">
       <img src="images/spock.png">
-    </div>
-    <ul id="results">
-    </ul>
+    </section>
+    <h2 id="results">
+    </h2>
 
-    <script src='lib/Player.js'></script>
-    <script src='lib/Game.js'></script>
+    <script src='src/RockPaperScissors.js'></script>
     <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script>
+      $(document).ready(function() {
+        var pavel = new Player('Pavel');
+        var alan = new Player('Alan');
+        var game = new Game(pavel, alan);
 
+        $('.choices img').on('click', function() {
+          pavel.pick('spock');
+          alan.pick('rock');
+            $('#results').html(game.winningMessage());
+        });
+      });
+    </script>
   </body>
 </html>
