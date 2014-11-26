@@ -3,13 +3,19 @@
   <head>
     <title>Rock Paper Scissors Lizard Spock</title>
     <style>
+
     body {
       font-family: 'Helvetica Neue';
       margin: 15px 0 0 30px;
     }
+    .choices {
+      width: 90%;
+      margin: 0 auto;
+    }
+
     .choices img {
-      width: 15%;
-      margin-right: 2.5%;
+      width: 10%;
+      margin: 0 auto;
       cursor: pointer;
       opacity: 0.5;
       transition: 1s all ease;
@@ -24,13 +30,15 @@
       list-style: none;
     }
     #results li {
-      background: #999;
+      background: #b32d2d;
+      width: 100%;
       color: #fff;
       font-size: 24px;
       border-radius: 8px;
-      padding: 5px;
+      padding: 20px;
       width: 80%;
       margin-bottom: 10px;
+      display: none;
     }
     </style>
   </head>
@@ -60,7 +68,16 @@
           pavel.picks($(this).data('pick'));
           alan.picks();
             $('#results').prepend('<li>' + game.winningMessage() + '</li>');
+            $('#results li:first-child').fadeIn();
+            if ($('#results').children().length > 5) {
+              $('#results li:last-child').fadeOut( 750, function () {
+                $(this).remove();
+              });
+
+             }
+
         });
+
       });
     </script>
   </body>
