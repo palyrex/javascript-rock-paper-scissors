@@ -11,115 +11,115 @@ describe("RockPaperScissors", function() {
 
     describe('rock', function() {
       it('should crush scissors', function() {
-        player1.pick("rock");
-        player2.pick("scissors");
+        player1.picks("rock");
+        player2.picks("scissors");
         expect(game.winner()).toBe(player1);
       });
       it('should crush lizard', function() {
-        player1.pick("rock");
-        player2.pick("lizard");
+        player1.picks("rock");
+        player2.picks("lizard");
         expect(game.winner()).toBe(player1);
       });
       it('should be covered by paper', function() {
-        player1.pick("rock");
-        player2.pick("paper");
+        player1.picks("rock");
+        player2.picks("paper");
         expect(game.winner()).toBe(player2);
       });
       it('should be vaporised by spock', function() {
-        player1.pick("rock");
-        player2.pick("spock");
+        player1.picks("rock");
+        player2.picks("spock");
         expect(game.winner()).toBe(player2);
       });
     });
 
     describe('scissors', function () {
       it('should cut paper', function() {
-        player1.pick("scissors");
-        player2.pick("paper");
+        player1.picks("scissors");
+        player2.picks("paper");
         expect(game.winner()).toBe(player1);
       });
       it('should decapitate lizard', function() {
-        player1.pick("scissors");
-        player2.pick("lizard");
+        player1.picks("scissors");
+        player2.picks("lizard");
         expect(game.winner()).toBe(player1);
       });
       it('should be crushed by rock', function() {
-        player1.pick("scissors");
-        player2.pick("rock");
+        player1.picks("scissors");
+        player2.picks("rock");
         expect(game.winner()).toBe(player2);
       });
       it('should be smashed by spock', function() {
-        player1.pick("scissors");
-        player2.pick("spock");
+        player1.picks("scissors");
+        player2.picks("spock");
         expect(game.winner()).toBe(player2);
       });
     });
 
     describe('paper', function () {
       it('should cover rock', function() {
-        player1.pick("paper");
-        player2.pick("rock");
+        player1.picks("paper");
+        player2.picks("rock");
         expect(game.winner()).toBe(player1);
       });
       it('should disprove spock', function() {
-        player1.pick("paper");
-        player2.pick("spock");
+        player1.picks("paper");
+        player2.picks("spock");
         expect(game.winner()).toBe(player1);
       });
       it('should be cut by scissors', function() {
-        player1.pick("paper");
-        player2.pick("scissors");
+        player1.picks("paper");
+        player2.picks("scissors");
         expect(game.winner()).toBe(player2);
       });
       it('should be eaten by lizard', function() {
-        player1.pick("paper");
-        player2.pick("lizard");
+        player1.picks("paper");
+        player2.picks("lizard");
         expect(game.winner()).toBe(player2);
       });
     });
 
     describe('lizard', function() {
       it('should eat paper', function() {
-        player1.pick("lizard");
-        player2.pick("paper");
+        player1.picks("lizard");
+        player2.picks("paper");
         expect(game.winner()).toBe(player1)
       });
       it('should poison spock', function() {
-        player1.pick("lizard");
-        player2.pick("spock");
+        player1.picks("lizard");
+        player2.picks("spock");
         expect(game.winner()).toBe(player1)
       });
       it('should be crushed by rock', function() {
-        player1.pick("lizard");
-        player2.pick("rock");
+        player1.picks("lizard");
+        player2.picks("rock");
         expect(game.winner()).toBe(player2)
       });
       it('should by decapitated by scissors', function() {
-        player1.pick("lizard");
-        player2.pick("scissors");
+        player1.picks("lizard");
+        player2.picks("scissors");
         expect(game.winner()).toBe(player2)
       });
     });
 
     describe('spock', function() {
       it('should crush scissors', function() {
-        player1.pick("spock");
-        player2.pick("scissors");
+        player1.picks("spock");
+        player2.picks("scissors");
         expect(game.winner()).toBe(player1)
       });
       it('should vaporise rock', function() {
-        player1.pick("spock");
-        player2.pick("rock");
+        player1.picks("spock");
+        player2.picks("rock");
         expect(game.winner()).toBe(player1)
       });
       it('should be poisoned by lizard', function() {
-        player1.pick("spock");
-        player2.pick("lizard");
+        player1.picks("spock");
+        player2.picks("lizard");
         expect(game.winner()).toBe(player2)
       });
       it('should be disproved by paper', function() {
-        player1.pick("spock");
-        player2.pick("paper");
+        player1.picks("spock");
+        player2.picks("paper");
         expect(game.winner()).toBe(player2)
       });
     });
@@ -127,54 +127,50 @@ describe("RockPaperScissors", function() {
 
   describe('drawing', function() {
     it('matching values should produe a tie', function() {
-      player1.pick("paper");
-      player2.pick("paper");
+      player1.picks("paper");
+      player2.picks("paper");
       expect(game.winner()).toBe(null);
     });
   }); 
 
   describe('print out winner and loser names', function() {
     it('should display winner name', function() {
-      player1.pick("rock");
-      player2.pick("spock");
-      expect(game.message()).toBe("Alan's spock vaporises Pavel's rock")
+      player1.picks("rock");
+      player2.picks("spock");
+      expect(game.winningMessage()).toBe("Alan's spock vaporises Pavel's rock")
     });
 
     it('should display loser name', function() {
-      player1.pick("lizard");
-      player2.pick("paper");
-      expect(game.message()).toBe("Pavel's lizard eats Alan's paper")
+      player1.picks("lizard");
+      player2.picks("paper");
+      expect(game.winningMessage()).toBe("Pavel's lizard eats Alan's paper")
     });
   });
 
-  describe('says draw if players choose same pick', function() {
+  describe('says draw if players choose same picks', function() {
     it('should print "That\'s a DRAW"', function() {
-      player1.pick("paper");
-      player2.pick("paper");
-      expect(game.message()).toBe("That's a DRAW")
+      player1.picks("paper");
+      player2.picks("paper");
+      expect(game.winningMessage()).toBe("Draw")
     });
   });
 
-  describe('the computer should pick a value', function() {
+  describe('the computer should picks a value', function() {
     it('should make a random choice', function() {
       bot = new Bot("Robo");
       available_choices = ["rock", "paper", "scissors", "lizard", "spock"];
-      expect(available_choices).toContain(bot.pick());
+      expect(available_choices).toContain(bot.picks());
     });
   });  
 
   describe('computer plays the game', function() {
     it('should be able to win or lose', function() {
+      player = new Player('Spike');
       bot = new Bot("Robo");
-      game = new Game(player1, bot);
-      player1.pick("paper");
-      bot.pick(); 
-      console.log(bot);
-      console.log(bot.pick);
-      console.log(player1.pick);
-      console.log(game.winner());
-      // console.log(game.message());
-      // expect(game.winner()).to Be(bot);
+      game = new Game(player, bot);
+      player.picks("spock");
+      bot.picks(); 
+      expect(game.winner()).toBe(bot);
     });
   });
 

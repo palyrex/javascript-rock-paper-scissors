@@ -1,11 +1,13 @@
  $(document).ready(function() {
         var pavel = new Player('Pavel');
-        var alan = new Bot('Alan');
-        var game = new Game(pavel, alan);
+        var bot = new Bot('Alan');
+        var game = new Game(pavel, bot);
 
         $('.choices img').on('click', function() {
-          pavel.picks($(this).data('pick'));
-          alan.picks();
+          var userChoice = $(this).data('pick')
+          pavel.picks(userChoice);
+          bot.TracingPlayerChoice(userChoice);
+          bot.picks();
             $('<li>' + game.winningMessage() + '</li>').prependTo('#results').fadeIn();
             $('#results li:nth-child(1)').addClass('element1');
             $('#results li:nth-child(2)').addClass('element2').removeClass('element1');
