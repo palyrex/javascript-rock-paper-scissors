@@ -1,3 +1,14 @@
+function Bot(name) {
+  this.name = name;
+};
+
+Bot.prototype.pick = function() {
+  available_choices = ["rock", "paper", "scissors", "lizard", "spock"];
+  choice_index = Math.floor(Math.random()*5)
+  this.pick = available_choices[choice_index];
+  return this.pick;
+};
+
 function Player(name) {
   this.name = name;
 };
@@ -11,11 +22,11 @@ function Game(player1, player2) {
   this.player2 = player2;
 };
 
-var pairs = {"rock" : ["scissors", "lizard"],
-             "scissors" : ["paper", "lizard"],
-             "paper" : ["rock", "spock"],
-             "lizard" : ["paper", "spock"],
-             "spock" : ["rock", "scissors"]}
+var pairs = {"rock"     : ["scissors", "lizard" ],
+             "scissors" : ["paper", "lizard"    ],
+             "paper"    : ["rock", "spock"      ],
+             "lizard"   : ["paper", "spock"     ],
+             "spock"    : ["rock", "scissors"   ]}
 
 Game.prototype.winner = function(){
   if (pairs[this.player1.pick].indexOf(this.player2.pick) > -1 ) return this.player1
@@ -30,16 +41,17 @@ Game.prototype.loser = function(){
 };
 
 Game.prototype.message = function() {
-verbs = {  "paper"  : ["covers","rock"],
-           "rock"   : ["crushes", "lizard"],
-           "lizard" : ["poisons", "spock"], 
-           "spock" : ["smashes", "scissors"],
-           "scissors" : ["cuts", "paper"],
-           "paper" : ["disproves", "spock"],
-           "lizard" : ["eats", "paper"],
-           "paper" : ["disproves", "spock"],
-           "spock" : ["vaporises", "rock"],
-           "rock" : ["crushes", "scissors"]}
+if (this.winner() === null) return "That's a DRAW"
+verbs = {  "paper"    : ["covers","rock"        ],
+           "rock"     : ["crushes", "lizard"    ],
+           "lizard"   : ["poisons", "spock"     ], 
+           "spock"    : ["smashes", "scissors"  ],
+           "scissors" : ["cuts", "paper"        ],
+           "paper"    : ["disproves", "spock"   ],
+           "lizard"   : ["eats", "paper"        ],
+           "paper"    : ["disproves", "spock"   ],
+           "spock"    : ["vaporises", "rock"    ],
+           "rock"     : ["crushes", "scissors"  ]}
 if (verbs[this.winner().pick].indexOf(this.loser().pick) > -1) verb = verbs[this.winner().pick][0];
 return (this.winner().name + "'s " + this.winner().pick + " " + verb + " " + this.loser().name + "'s " + this.loser().pick);
 
