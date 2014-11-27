@@ -23,10 +23,22 @@ var hideForm = function() {
     }
   );
 
-  $('#submit').on('click', function() {
+  nameTrigger = function() {
     player.setName($('#username').val());
     hideForm();
     loadChoices();
+  };
+
+
+  $("#username").keydown(function( event ) {
+    if ( event.which == 13 ) {
+      nameTrigger();
+    }
+  });
+ 
+
+  $('#submit').on('click', function() {
+    nameTrigger();
   });
 
   var player = new Player("");
