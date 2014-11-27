@@ -21,6 +21,40 @@ h2, h3 {
 h1 .word1, .word2, .word3, .word4, .word5 {
   display: none;
 }
+.name-entry {
+  display: none;
+  width: 50%;
+  margin: 0 auto 30px auto;
+}
+.name-entry #username {
+  width: 100%;
+  display: block;
+  height: 80px;
+  padding: 0 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #414851 !important;
+  font-size: 3em;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  color: #414851;
+}
+.name-entry #submit {
+  width: 30%;
+  margin: 10px auto;
+  padding: 10px;
+  display: block;
+  color: #414851;
+  background-color: #fff;
+  border: 5px solid #414851;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+}
 .choices {
   display: none;
   width: 90%;
@@ -79,43 +113,40 @@ h1 .word1, .word2, .word3, .word4, .word5 {
 }
 .element1 {
   font-size: 3em !important;
-  width: 60%;
   margin: 0 auto;
+  width: 80% !important;
   color: #03416B;
   border: 5px solid #03416B;
   transition: width 2s, height 2s, transform 2s;
 }
 .element2 {
   font-size: 2em !important;
-  width: 40% !important;
   margin: 0 auto;
+  width: 70% !important;
   color: #045891;
   position: relative;
   border: 4px solid #045891;
   transition: width 2s, height 2s, transform 2s;
-  float: left;
 }
 .element3 {
   font-size: 1.5em !important;
-  width: 20% !important;
+  width: 60% !important;
   margin: 0 auto;
   color: #0568AB;
   border: 3px solid #0568AB;
   transition: width 2s, height 2s, transform 2s;
-  float: left;
 }
 .element4 {
+  width: 50% !important;
   font-size: 1em !important;
-  width: 10% !important;
   margin: 0 auto;
   color: #0570B8;
   border: 2px solid #0570B8;
   transition: width 2s, height 2s, transform 2s;
-  float: left;
 }
 .element5 {
+  width: 40% !important;
   font-size: 0.5em !important;
-  width: 200px !important;
   margin: 0 auto;
   color: #0797F7;
   border: 1px solid #0797F7;
