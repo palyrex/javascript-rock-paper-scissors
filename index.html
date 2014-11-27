@@ -1,23 +1,50 @@
 <!doctype>
 <html>
   <head>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>Rock Paper Scissors Lizard Spock</title>
   </head>
   <body>
     <header>
-      <h1>Rock Paper Scissors Lizard Spock</h1>
+      <h1>
+        <span class="word1">
+          Rock
+        </span>
+        <span class="word2">
+          Scissors
+        </span>
+        <span class="word3">
+          Paper
+        </span>
+        <span class="word4">
+          Lizard
+        </span>
+        <span class="word5">
+          Spock
+        </span>
+      </h1>
     </header>
     <section class='choices'>
-      <img src="images/rock.png" data-pick='rock'>
-      <img src="images/paper.png" data-pick='paper'>
-      <img src="images/scissors.png" data-pick='scissors'>
-      <img src="images/lizard.png" data-pick='lizard'>
-      <img src="images/spock.png" data-pick='spock'>
+      <div class="choice" data-pick='rock'>
+        <p>Rock</p>
+      </div>
+      <div class="choice" data-pick='paper'>
+        <p>Paper</p>
+      </div>
+      <div class="choice" data-pick='scissors'>
+        <p>Scissors</p>
+      </div>
+      <div class="choice" data-pick='lizard'>
+        <p>Lizard</p>
+      </div>
+      <div class="choice" data-pick='spock'>
+        <p>Spock</p>
+      </div>
     </section>
     <ul id="results">
     </ul>
-    <script src='src/RockPaperScissors.js'></script>
+    <script src='src/Game.js'></script>
     <script src='src/Player.js'></script>
     <script src='src/Bot.js'></script>
     <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>

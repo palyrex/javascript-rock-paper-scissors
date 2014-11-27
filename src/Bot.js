@@ -16,7 +16,7 @@ Bot.prototype.NormalChoice = function() {
   this.choice = available_choices[choice_index];
   return this.choice;
 };
-  
+
 var playerPicks = {"rock" : 0, "scissors" : 0, "paper" : 0, "lizard" : 0, "spock" : 0}
 
 Bot.prototype.TracingPlayerChoice = function(weapon) {
@@ -46,7 +46,3 @@ Bot.prototype.AIweapon = function() {
   }
   return botChoices[choice][Math.floor(Math.random()*2)]
 };
-
-
-
-
