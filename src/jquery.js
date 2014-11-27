@@ -1,11 +1,19 @@
  $(document).ready(function() {
-
   $('.word1').fadeIn(1000);
   $('.word2').fadeIn(1500);
   $('.word3').fadeIn(2000);
   $('.word4').fadeIn(2500);
   $('.word5').fadeIn(3000);
-  $('.choices').fadeIn(4500);
+  $('.name-entry').fadeIn(4500);
+
+var loadChoices = function() {
+  $('.choices').fadeIn(2000);
+};
+
+var hideForm = function() {
+  $('.name-entry').slideUp(1000);
+
+};
 
   $('.choice').hover(
     function(){
@@ -15,12 +23,18 @@
     }
   );
 
-  var pavel = new Player('Pavel');
-  var bot = new Bot('Alan');
-  var game = new Game(pavel, bot);
+  $('#submit').on('click', function() {
+    player.setName($('#username').val());
+    hideForm();
+    loadChoices();
+  });
+
+  var player = new Player("");
+  var bot = new Bot('Mr Bot');
+  var game = new Game(player, bot);
 
   var makePick = function(userChoice) {
-    pavel.picks(userChoice);
+    player.picks(userChoice);
     bot.TracingPlayerChoice(userChoice);
     bot.picks()
   };
@@ -29,7 +43,7 @@
   var changeResultClasses = function () {
 
     $('#results li:nth-child(1)').animate({
-      "top": "+=120px",
+      "top": "+=130px",
       "width": "60%"
     });
     $('#results li:nth-child(1)').addClass('element2').removeClass('element1');
@@ -38,11 +52,11 @@
     });
     $('#results li:nth-child(2)').addClass('element3').removeClass('element2');
     $('#results li:nth-child(3)').animate({
-      "top": "+=120px"
+      "top": "+=100px"
     });
     $('#results li:nth-child(3)').addClass('element4').removeClass('element3');
     $('#results li:nth-child(4)').animate({
-      "top": "+=140px"
+      "top": "+=90px"
     });
     $('#results li:nth-child(4)').addClass('element5').removeClass('element4');
     $('#results li:nth-child(4)').fadeOut( 750, removeResult);

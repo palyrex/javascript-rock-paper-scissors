@@ -25,7 +25,11 @@
         </span>
       </h1>
     </header>
-    <section class='choices'>
+    <section class="name-entry">
+        <input type="text" id="username" value="">
+        <button id="submit">Submit</button>
+    </section>
+    <section class="choices">
       <div class="choice" data-pick='rock'>
         <p>Rock</p>
         <img src="images/rock.png">
@@ -49,7 +53,7 @@
     </section>
     <ul id="results">
     </ul>
-    <template id='list-item-template'>
+    <template id="list-item-template">
       <li>{{ message }}</li>
     </template>
     <script src='src/Game.js'></script>
