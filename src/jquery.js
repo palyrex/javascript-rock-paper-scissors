@@ -1,5 +1,5 @@
  $(document).ready(function() {
-  
+
   $('.word1').fadeIn(1000);
   $('.word2').fadeIn(1500);
   $('.word3').fadeIn(2000);
@@ -25,13 +25,27 @@
     bot.picks()
   };
 
+
   var changeResultClasses = function () {
-    $('#results li:nth-child(1)').addClass('element1');
-    $('#results li:nth-child(2)').addClass('element2').removeClass('element1');
-    $('#results li:nth-child(3)').addClass('element3').removeClass('element2');
-    $('#results li:nth-child(4)').addClass('element4').removeClass('element3');
-    $('#results li:nth-child(5)').addClass('element5').removeClass('element3');
-    $('#results li:nth-child(5)').fadeOut( 750, removeResult);
+
+    $('#results li:nth-child(1)').animate({
+      "top": "+=120px",
+      "width": "60%"
+    });
+    $('#results li:nth-child(1)').addClass('element2').removeClass('element1');
+    $('#results li:nth-child(2)').animate({
+      "top": "+=110px"
+    });
+    $('#results li:nth-child(2)').addClass('element3').removeClass('element2');
+    $('#results li:nth-child(3)').animate({
+      "top": "+=120px"
+    });
+    $('#results li:nth-child(3)').addClass('element4').removeClass('element3');
+    $('#results li:nth-child(4)').animate({
+      "top": "+=140px"
+    });
+    $('#results li:nth-child(4)').addClass('element5').removeClass('element4');
+    $('#results li:nth-child(4)').fadeOut( 750, removeResult);
   };
 
   var createResults = function () {
@@ -46,8 +60,9 @@
   var itemClicked = function() {
     var userChoice = $(this).data('pick');
     makePick(userChoice);
-    createResults();
     changeResultClasses();
+    createResults();
+    $('#results li:nth-child(1)').addClass('element1');
   };
 
   $('.choice').on('click', itemClicked);
