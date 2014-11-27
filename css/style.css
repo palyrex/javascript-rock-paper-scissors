@@ -37,16 +37,27 @@ h1 .word1, .word2, .word3, .word4, .word5 {
   float: left;
   transition: 0.5s all ease;
   display: block;
+  overflow: hidden;
+  position: relative;
 }
 .choice:hover {
   border: 10px solid  #a10c0c;
+}
+.choice img {
+  transition: opacity 0.5s ease;
+}
+.choice:hover img {
+  opacity: 0.4;
 }
 .choice p {
   display: none;
   font-weight: 400;
   text-transform: uppercase;
-  margin-top: 50px;
+  position: absolute;
+  bottom: 30px;
   color: #a10c0c;
+  text-align: center;
+  width: 100%;
 }
 #results {
   list-style: none;
