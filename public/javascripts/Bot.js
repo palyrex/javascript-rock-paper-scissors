@@ -3,7 +3,7 @@ function Bot(name) {
 };
 
 Bot.prototype.picks = function() {
-  if(this.PlayersLargestCount() < 5) {
+  if(this.PlayersLargestCount() < 3) {
     this.pick = this.NormalChoice()
   } else {
     this.pick = this.AIweapon()
