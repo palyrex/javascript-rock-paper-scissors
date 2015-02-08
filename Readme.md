@@ -20,4 +20,4 @@ Makers Academy Week 5 Activity to build a Rock, Paper, Scissors game using Javas
 * Enter your name and play the game!
 
 ###Testing
-* Open `SpecRunner.html`
+Tests are carried out by Jasmine (files in spec/*). To run these, just open `SpecRunner.html`
