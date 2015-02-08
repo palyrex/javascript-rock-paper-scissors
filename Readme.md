@@ -4,7 +4,7 @@ Rock, Paper, Scissors, Lizard, Spock
 
 Makers Academy Week 5 Activity to build a Rock, Paper, Scissors game using Javascript and jQuery, pairing with [@palyrex](https://github.com/palyrex). To spice the game up a bit, we also included the extra options of Lizard and Spock, and a little AI to make the computer player responsive to player choices. A little sprinkling of jQuery makes the game smooth, slick and nice to play. It's available to play now on [Heroku] (https://dwayne-vs-eddy.herokuapp.com/)!
 
-####Technologies & Principles
+###Technologies & Principles
 * Javascript
 * jQuery
 * Mustache templating
