@@ -1,4 +1,4 @@
- $(document).ready(function() {
+$(document).ready(function() {
   $('.word1').fadeIn(1000);
   $('.word2').fadeIn(1500);
   $('.word3').fadeIn(2000);
@@ -12,7 +12,6 @@
 
   var hideForm = function() {
     $('.name-entry').slideUp(1000);
-
   };
 
   $('.choice').hover(
@@ -29,13 +28,11 @@
     loadChoices();
   };
 
-
   $("#username").keydown(function( event ) {
     if ( event.which == 13 ) {
       nameTrigger();
     }
   });
- 
 
   $('#submit').on('click', function() {
     nameTrigger();
@@ -51,9 +48,7 @@
     bot.picks();
   };
 
-
   var changeResultClasses = function () {
-
     $('#results li:nth-child(1)').animate({
       "top": "+=130px",
       "width": "60%"

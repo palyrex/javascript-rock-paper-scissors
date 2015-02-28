@@ -1,17 +1,24 @@
-###Week 5 Project at Makers Academy
+Rock, Paper, Scissors, Lizard, Spock
+====================================
+[![Code Climate](https://codeclimate.com/github/abridger/javascript-rock-paper-scissors/badges/gpa.svg)](https://codeclimate.com/github/abridger/javascript-rock-paper-scissors)
 
+Makers Academy Week 5 Activity to build a Rock, Paper, Scissors game using Javascript and jQuery, pairing with [@abridger](https://github.com/abridger). To spice the game up a bit, we also included the extra options of Lizard and Spock, and a little AI to make the computer player responsive to player choices. A little sprinkling of jQuery makes the game smooth, slick and nice to play. It's available to play now on [Heroku](https://dwayne-vs-eddy.herokuapp.com/)!
 
-This week we got new bundle of technologies to utilise in our minds in face of Javascript and jQuery.
-Project we being working on this time was to implement Rock-Paper-Scissors-Lizard-Spock on client-side using Javascript for hard logic work and jQuery/CSS for cool animations. Jasmine comes in handy for unit testing and to stick ourselves to TDD. By the end we deployed it to [Heroku](https://dwayne-vs-eddy.herokuapp.com/) so everyone can play!
+###Technologies & Principles
+* Javascript
+* jQuery
+* Mustache templating
+* Jasmine
+* CSS/HTML
+* Ruby
+* Sinatra
+* Heroku
+* TDD
 
+###Installation
+* Install dependencies: `bundle install`
+* Run the server: `rackup`
+* Enter your name and play the game!
 
-####Technologies used:
-
-- Javascript
-- Ruby
-- Jasmine 
-- Sinatra 
-- CSS/HTML
-- jQuery
-- Mustache
-
+###Testing
+Tests are carried out by Jasmine (files in spec/*). To run these, just open `SpecRunner.html`
