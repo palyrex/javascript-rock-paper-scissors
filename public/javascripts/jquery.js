@@ -6,14 +6,14 @@
   $('.word5').fadeIn(3000);
   $('.name-entry').fadeIn(4500);
 
-var loadChoices = function() {
-  $('.choices').fadeIn(2000);
-};
+  var loadChoices = function() {
+    $('.choices').fadeIn(2000);
+  };
 
-var hideForm = function() {
-  $('.name-entry').slideUp(1000);
+  var hideForm = function() {
+    $('.name-entry').slideUp(1000);
 
-};
+  };
 
   $('.choice').hover(
     function(){
@@ -23,7 +23,7 @@ var hideForm = function() {
     }
   );
 
-  nameTrigger = function() {
+  var nameTrigger = function() {
     player.setName($('#username').val());
     hideForm();
     loadChoices();
@@ -48,7 +48,7 @@ var hideForm = function() {
   var makePick = function(userChoice) {
     player.picks(userChoice);
     bot.TracingPlayerChoice(userChoice);
-    bot.picks()
+    bot.picks();
   };
 
 
@@ -75,7 +75,7 @@ var hideForm = function() {
   };
 
   var createResults = function () {
-    var rendered = Mustache.render($('#list-item-template').html(),{message: game.winningMessage()})
+    var rendered = Mustache.render($('#list-item-template').html(),{message: game.winningMessage()});
     $(rendered).prependTo('#results').fadeIn(1500);
   };
 
@@ -92,5 +92,4 @@ var hideForm = function() {
   };
 
   $('.choice').on('click', itemClicked);
-
 });
